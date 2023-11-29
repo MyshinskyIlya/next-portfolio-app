@@ -16,6 +16,8 @@ const TAB_DATA = [
                     <li>React</li>
                     <li>TypeScript</li>
                     <li>Node</li>
+                    <li>Redux Toolkit</li>
+                    <li>MobX</li>
                     <li>NextJS</li>
                     <li>MongoDB</li>
                     <li>PostgreSQL</li>
