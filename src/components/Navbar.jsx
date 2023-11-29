@@ -19,7 +19,7 @@ const Navbar = () => {
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90">
-            <div className="flex flex-wrap items-center justify-between mx-auto md:p-8 px-8 py-4">
+            <div className="flex flex-wrap items-center justify-between mx-auto md:py-4 px-8 py-4">
                 <Link href={"/"} className="md:text-5xl text-2xl font-semibold">
                     LOGO
                 </Link>
