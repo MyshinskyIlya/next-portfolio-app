@@ -7,8 +7,10 @@ const Footer = () => {
          border-l-transparent border-r-transparent border-b-transparent"
         >
             <div className="container p-12 flex justify-between items-center">
-                <span className="text-lg font-semibold">LOGO</span>
-                <p className="text-slate-700">All rights reserved.</p>
+                <span className="md:text-lg text-sm font-semibold">LOGO</span>
+                <p className="text-slate-700 text-sm md:text-base">
+                    All rights reserved.
+                </p>
             </div>
         </footer>
     );

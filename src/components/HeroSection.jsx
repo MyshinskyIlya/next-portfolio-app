@@ -11,7 +11,7 @@ const HeroSection = () => {
         <section>
             <div className="grid grid-cols-1 sm:grid-cols-12">
                 <div className="col-span-7 place-self-center text-center sm:text-left sm:mr-10">
-                    <h1 className="mb-4 lg:text-6xl text-4xl sm:text-5xl font-extrabold">
+                    <h1 className="mb-4 lg:text-6xl text-3xl md:text-4xl font-extrabold">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-teal-600">
                             Hello I`m{" "}
                         </span>
