@@ -28,10 +28,10 @@ const ProjectsSection = () => {
     );
     return (
         <section>
-            <h2>My Projects</h2>
+            <h2 className="text-4xl font-bold text-center">My Projects</h2>
             <div
                 className="text-white flex flex-row justify-center
-                 items-center py-6  gap-4 md:gap-6 "
+                 items-center py-6 mt-6 gap-4 md:gap-6 "
             >
                 {tags.map((item) => (
                     <ProjectTag
