@@ -1,14 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import githubIcon from "../../public/images/icons/github.svg";
 import tgIcon from "../../public/images/icons/telegram.svg";
 import Link from "next/link";
 import Image from "next/image";
 
 const EmailSection = () => {
+    const [emailSubmited, setEmailSubmited] = useState(false);
+    const [errorSumbit, setErrorSubmit] = useState(false);
+    const [sending, setSending] = useState(false);
+
     const handleSumbit = async (e) => {
         e.preventDefault();
+        setSending(true);
         const data = {
             email: e.target.email.value,
             subject: e.target.subject.value,
@@ -26,13 +31,17 @@ const EmailSection = () => {
             body: JSONdata,
         };
 
-        console.log(options);
         const response = await fetch(endpoint, options).then((res) => {
-            console.log(res);
-
             if (res.status === 200) {
                 console.log("Message sent.");
+                setEmailSubmited(true);
             }
+
+            if (res.status !== 200) {
+                setErrorSubmit(true);
+            }
+
+            setSending(false);
         });
     };
     return (
@@ -127,7 +136,19 @@ const EmailSection = () => {
                             type="submit"
                             className="mt-2 bg-gradient-to-r hover:from-violet-800 hover:to-teal-900 from-violet-900 to-teal-950  text-white font-medium p-2 rounded-lg"
                         >
-                            Send Message
+                            {sending ? (
+                                <p>Sending...</p>
+                            ) : emailSubmited ? (
+                                <p className="text-green-600">
+                                    Email sent successfully!
+                                </p>
+                            ) : !errorSumbit ? (
+                                <p>Send Message</p>
+                            ) : (
+                                <p className="text-red-600">
+                                    Something was wrong
+                                </p>
+                            )}
                         </button>
                     </form>
                 </div>

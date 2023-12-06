@@ -9,7 +9,7 @@ export async function POST(req, res) {
 
     try {
         const { data } = await resend.emails.send({
-            from: `Acme <${email}>`,
+            from: `onboarding@resend.dev`,
             to: "myshinskiyyy@gmail.com",
             subject,
             react: (
