@@ -7,6 +7,34 @@ import Link from "next/link";
 import Image from "next/image";
 
 const EmailSection = () => {
+    const handleSumbit = async (e) => {
+        e.preventDefault();
+        const data = {
+            email: e.target.email.value,
+            subject: e.target.subject.value,
+            message: e.target.message.value,
+        };
+
+        const JSONdata = JSON.stringify(data);
+        const endpoint = "/api/send";
+
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "aplication/json",
+            },
+            body: JSONdata,
+        };
+
+        console.log(options);
+        const response = await fetch(endpoint, options).then((res) => {
+            console.log(res);
+
+            if (res.status === 200) {
+                console.log("Message sent.");
+            }
+        });
+    };
     return (
         <section className="relative">
             <div className="pointer-events-none backdrop-blur-sm bg-gradient-to-r from-violet-700 to-teal-950 absolute top-20 left-1/2 h-96 w-full rounded-full opacity-5 blur-3xl"></div>
@@ -43,7 +71,10 @@ const EmailSection = () => {
                     </div>
                 </div>
                 <div className="text-white">
-                    <form action="" className="flex flex-col gap-4">
+                    <form
+                        onSubmit={handleSumbit}
+                        className="flex flex-col gap-4"
+                    >
                         <div>
                             <label
                                 htmlFor="email"
@@ -53,6 +84,7 @@ const EmailSection = () => {
                                 Your email
                             </label>
                             <input
+                                name="email"
                                 type="email"
                                 id="email"
                                 required
@@ -69,6 +101,7 @@ const EmailSection = () => {
                                 Subject
                             </label>
                             <input
+                                name="subject"
                                 type="text"
                                 id="subject"
                                 required
