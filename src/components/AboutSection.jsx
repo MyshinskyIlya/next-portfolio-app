@@ -78,7 +78,7 @@ const AboutSection = () => {
         animate: { x: 0, opacity: 1 },
     };
     return (
-        <section className="text-white">
+        <section id="about" className="text-white md:mt-12 md:pt-20">
             <motion.div
                 ref={ref}
                 variants={cardVarients}
