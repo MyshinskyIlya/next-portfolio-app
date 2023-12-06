@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ProjectCart from "./ProjectCart";
 import { projectsArray } from "@/assets/projects";
 import ProjectTag from "./ProjectTag";
+import { motion, useInView } from "framer-motion";
 
 const tags = [
     {
@@ -18,6 +19,8 @@ const tags = [
 
 const ProjectsSection = () => {
     const [tag, setTag] = useState("All");
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
 
     const handleTag = (newTag) => {
         setTag(newTag);
@@ -26,6 +29,12 @@ const ProjectsSection = () => {
     const filteredProjects = projectsArray.filter((item) =>
         item.tag.includes(tag)
     );
+
+    const cardVarients = {
+        initial: { y: 50, opacity: 0 },
+        animate: { y: 0, opacity: 1 },
+    };
+
     return (
         <section>
             <h2 className="text-4xl font-bold text-center">My Projects</h2>
@@ -42,20 +51,25 @@ const ProjectsSection = () => {
                     ></ProjectTag>
                 ))}
             </div>
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-                {filteredProjects.map((item) => {
-                    return (
+            <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+                {filteredProjects.map((item, index) => (
+                    <motion.li
+                        key={item.id}
+                        variants={cardVarients}
+                        initial="initial"
+                        animate={isInView ? "animate" : "initial"}
+                        transition={{ duration: 0.3, delay: index * 0.4 }}
+                    >
                         <ProjectCart
-                            key={item.id}
                             imageUrl={item.image}
                             title={item.title}
                             description={item.description}
                             gitUrl={item.gitUrl}
                             previewUrl={item.previewUrl}
                         ></ProjectCart>
-                    );
-                })}
-            </div>
+                    </motion.li>
+                ))}
+            </ul>
         </section>
     );
 };

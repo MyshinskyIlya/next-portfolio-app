@@ -48,7 +48,7 @@ const EmailSection = () => {
         <section className="relative">
             <div className="pointer-events-none backdrop-blur-sm bg-gradient-to-r from-violet-700 to-teal-950 absolute top-20 left-1/2 h-96 w-full rounded-full opacity-5 blur-3xl"></div>
             <div className="pointer-events-none backdrop-blur-sm bg-gradient-to-r from-violet-700 to-teal-950 absolute -bottom-56 -left-40 h-96 w-96 rounded-full opacity-30 blur-3xl"></div>
-            <div className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 z-20">
+            <div className="grid md:grid-cols-2 md:my-12 py-12 gap-4 z-20">
                 <div>
                     <h5 className="text-xl font-bold text-white my-2">
                         Let`s Connect

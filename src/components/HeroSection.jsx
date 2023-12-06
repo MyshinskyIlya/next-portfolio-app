@@ -3,14 +3,19 @@
 import React from "react";
 import Image from "next/image";
 import heroImg from "../../public/images/avatar.png";
-
+import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
     return (
         <section>
-            <div className="grid grid-cols-1 sm:grid-cols-12">
-                <div className="col-span-7 place-self-center text-center sm:text-left sm:mr-10">
+            <div className=" mt-4 grid grid-cols-1 sm:grid-cols-12 mb-16">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="col-span-7 place-self-center text-center sm:text-left sm:mr-10"
+                >
                     <h1 className="mb-4 lg:text-6xl text-3xl md:text-4xl font-extrabold">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-teal-600">
                             Hello I`m{" "}
@@ -49,9 +54,14 @@ const HeroSection = () => {
                             </span>
                         </button>
                     </div>
-                </div>
-                <div className="col-span-5 place-self-center mt-5 lg:mt-0 sm:ml-10">
-                    <div className="rounded-full bg-[#181818] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] relative">
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, x: 120 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                    className="col-span-5 place-self-center mt-5 lg:mt-0 sm:ml-10"
+                >
+                    <div className="rounded-full bg-[#181818] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] relative hidden md:block">
                         <Image
                             className="transform absolute -translate-x-1/2 -translate-y-1/2 top-[160px] -right-[115px] lg:top-[240px] lg:right-[-42px]"
                             src={heroImg}
@@ -61,7 +71,7 @@ const HeroSection = () => {
                             alt="hero image"
                         ></Image>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
