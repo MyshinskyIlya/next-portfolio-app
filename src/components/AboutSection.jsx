@@ -113,7 +113,7 @@ const AboutSection = () => {
                         стартапы. Приверженость обучению и лучшим практикам
                         разработки.
                     </p>
-                    <div className="flex flex-row mt-8 gap-3 text-[#ADB7BE] text-xs md:text-lg">
+                    <div className="flex flex-row mt-8 gap-3 text-[#ADB7BE] text-xs md:text-lg whitespace-nowrap">
                         <TapButton
                             selectTab={() => handleTapChange("skills")}
                             active={tab === "skills"}
