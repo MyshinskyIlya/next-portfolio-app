@@ -90,7 +90,7 @@ const EmailSection = () => {
                                 type="email"
                                 className="block text-sm font-medium"
                             >
-                                Ваш почта
+                                Ваша почта
                             </label>
                             <input
                                 name="email"
