@@ -1,15 +1,17 @@
 import React from "react";
 import NavLink from "./NavLink";
 
-const MenuOverlay = ({ links }) => {
+const MenuOverlay = ({ links, setNavbarOpen }) => {
+    const clickHandler = () => {
+        setNavbarOpen(false);
+    };
+
     return (
-        <ul className=" flex flex-col py-2 items-center">
+        <ul className="flex flex-col py-2 items-center">
             {links.map((item) => (
-                <NavLink
-                    key={item.title}
-                    href={item.path}
-                    title={item.title}
-                ></NavLink>
+                <p onClick={clickHandler} key={item.title}>
+                    <NavLink href={item.path} title={item.title}></NavLink>
+                </p>
             ))}
         </ul>
     );

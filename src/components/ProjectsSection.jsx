@@ -36,7 +36,7 @@ const ProjectsSection = () => {
     };
 
     return (
-        <section id="projects" className="md:pt-20">
+        <section id="projects" className="pt-20">
             <h2 className="text-4xl font-bold text-center">ПРОЕКТЫ</h2>
             <div
                 className="text-white flex flex-row justify-center

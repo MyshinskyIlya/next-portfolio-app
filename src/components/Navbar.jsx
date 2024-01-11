@@ -54,7 +54,12 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {navbarOpen && <MenuOverlay links={navLinks}></MenuOverlay>}
+            {navbarOpen && (
+                <MenuOverlay
+                    links={navLinks}
+                    setNavbarOpen={setNavbarOpen}
+                ></MenuOverlay>
+            )}
         </nav>
     );
 };

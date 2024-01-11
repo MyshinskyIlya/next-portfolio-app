@@ -86,7 +86,7 @@ const AboutSection = () => {
         animate: { x: 0, opacity: 1 },
     };
     return (
-        <section id="about" className="text-white md:mt-12 md:pt-20">
+        <section id="about" className="text-white md:mt-12 pt-16">
             <motion.div
                 ref={ref}
                 variants={cardVarients}
@@ -133,7 +133,7 @@ const AboutSection = () => {
                             Опыт работы
                         </TapButton>
                     </div>
-                    <div className="mt-8 md:min-h-[180px] min-h-[286px]">
+                    <div className="mt-8 md:min-h-[226px] min-h-[286px]">
                         {TAB_DATA.find((t) => t.id === tab).content}
                     </div>
                 </div>
