@@ -17,7 +17,7 @@ const HeroSection = () => {
                     transition={{ duration: 0.5 }}
                     className="col-span-7 place-self-center text-center sm:text-left sm:mr-10"
                 >
-                    <h1 className="mb-4 lg:text-6xl text-3xl md:text-4xl font-extrabold">
+                    <h1 className="mb-4 lg:text-6xl text-[28px] leading-10 md:text-4xl font-extrabold">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-teal-600">
                             ПРИВЕТ, Я{" "}
                         </span>
@@ -26,7 +26,7 @@ const HeroSection = () => {
                             sequence={[
                                 "Мышинский Илья",
                                 1000,
-                                "Веб Разработчик",
+                                "Веб-Разработчик",
                                 1000,
                             ]}
                             wrapper="span"
