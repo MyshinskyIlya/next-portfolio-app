@@ -90,7 +90,7 @@ const EmailSection = () => {
                                 type="email"
                                 className="block text-sm font-medium"
                             >
-                                Почта
+                                Ваш почта
                             </label>
                             <input
                                 name="email"
@@ -107,7 +107,7 @@ const EmailSection = () => {
                                 type="email"
                                 className="mt-2 block text-sm font-medium"
                             >
-                                Заголовок
+                                Тема
                             </label>
                             <input
                                 name="subject"
