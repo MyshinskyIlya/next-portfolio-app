@@ -9,9 +9,9 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 
 const navLinks = [
-    { title: "About", path: "#about" },
-    { title: "Projects", path: "#projects" },
-    { title: "Contact", path: "#contact" },
+    { title: "ОБО МНЕ", path: "#about" },
+    { title: "ПРОЕКТЫ", path: "#projects" },
+    { title: "КОНТАКТЫ", path: "#contact" },
 ];
 
 const Navbar = () => {
@@ -21,7 +21,7 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90">
             <div className="flex flex-wrap items-center justify-between mx-auto md:py-4 px-8 py-4">
                 <Link href={"/"} className="md:text-4xl text-2xl font-semibold">
-                    LOGO
+                    ПОРТФОЛИО
                 </Link>
                 <div className="mobile-menu block md:hidden">
                     {!navbarOpen ? (

@@ -7,7 +7,9 @@ const Footer = () => {
          border-l-transparent border-r-transparent border-b-transparent"
         >
             <div className="container p-12 flex justify-between items-center">
-                <span className="md:text-lg text-sm font-semibold">LOGO</span>
+                <span className="md:text-lg text-sm font-semibold">
+                    Myshinsky I 2023
+                </span>
                 <p className="text-slate-700 text-sm md:text-base">
                     All rights reserved.
                 </p>

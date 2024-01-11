@@ -51,12 +51,12 @@ const EmailSection = () => {
             <div className="grid md:grid-cols-2 md:my-12 py-12 gap-4 z-20">
                 <div>
                     <h5 className="text-xl font-bold text-white my-2">
-                        Let`s Connect
+                        Связь со мной
                     </h5>
                     <p className="text-[#ADB7BE] mb-4 max-w-md">
-                        I`m currently looking for new opportunities, my inbox is
-                        always open. Whether you have a question or just want to
-                        say hi, I`ll try my best to get back to you!
+                        Сейчас я ищу новые возможности и часто проверяю почту,
+                        если возникнут вопросы или предложения постараюсь как
+                        можно скорее ответить.
                     </p>
                     <div className="socials flex flex-row gap-4">
                         <Link href={"https://github.com/MyshinskyIlya"}>
@@ -68,7 +68,7 @@ const EmailSection = () => {
                                 alt="github icon"
                             ></Image>
                         </Link>
-                        <Link href={"https://t.me/myprogramminghours"}>
+                        <Link href={"https://t.me/bvllone"}>
                             <Image
                                 src={tgIcon}
                                 width={32}
@@ -90,7 +90,7 @@ const EmailSection = () => {
                                 type="email"
                                 className="block text-sm font-medium"
                             >
-                                Your email
+                                Почта
                             </label>
                             <input
                                 name="email"
@@ -107,14 +107,14 @@ const EmailSection = () => {
                                 type="email"
                                 className="mt-2 block text-sm font-medium"
                             >
-                                Subject
+                                Заголовок
                             </label>
                             <input
                                 name="subject"
                                 type="text"
                                 id="subject"
                                 required
-                                placeholder="Just saying hi"
+                                placeholder="Привет, Илья..."
                                 className="mt-4 bg-[#191919] border border-[#33353F] placeholder=[#9CA2A9] text-gray-200 text-sm rounded=lg block w-full p-2"
                             />
                         </div>
@@ -123,13 +123,13 @@ const EmailSection = () => {
                                 htmlFor="message"
                                 className="mt-2 block text-sm font-medium"
                             >
-                                Message
+                                Сообщение
                             </label>
                             <textarea
                                 name="message"
                                 id="message"
                                 className="mt-4 bg-[#191919] border border-[#33353F] placeholder=[#9CA2A9] text-gray-200 text-sm rounded=lg block w-full p-2"
-                                placeholder="Let`s talk about..."
+                                placeholder="Как ты смотришь на то, чтобы..."
                             ></textarea>
                         </div>
                         <button
@@ -137,16 +137,16 @@ const EmailSection = () => {
                             className="mt-2 bg-gradient-to-r hover:from-violet-800 hover:to-teal-900 from-violet-900 to-teal-950  text-white font-medium p-2 rounded-lg"
                         >
                             {sending ? (
-                                <p>Sending...</p>
+                                <p>Отправка...</p>
                             ) : emailSubmited ? (
                                 <p className="text-green-600">
-                                    Email sent successfully!
+                                    Письмо отправлено!
                                 </p>
                             ) : !errorSumbit ? (
-                                <p>Send Message</p>
+                                <p>Отправить</p>
                             ) : (
                                 <p className="text-red-600">
-                                    Something was wrong
+                                    Что-то пошло не так
                                 </p>
                             )}
                         </button>

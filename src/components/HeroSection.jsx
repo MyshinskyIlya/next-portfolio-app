@@ -5,6 +5,7 @@ import Image from "next/image";
 import heroImg from "../../public/images/avatar.png";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import Link from "next/link";
 
 const HeroSection = () => {
     return (
@@ -18,14 +19,14 @@ const HeroSection = () => {
                 >
                     <h1 className="mb-4 lg:text-6xl text-3xl md:text-4xl font-extrabold">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-teal-600">
-                            Hello I`m{" "}
+                            ПРИВЕТ, Я{" "}
                         </span>
                         <br></br>
                         <TypeAnimation
                             sequence={[
-                                "Myshinsky Ilya",
+                                "Мышинский Илья",
                                 1000,
-                                "Web Developer",
+                                "Веб Разработчик",
                                 1000,
                             ]}
                             wrapper="span"
@@ -37,22 +38,38 @@ const HeroSection = () => {
                         />
                     </h1>
                     <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Aspernatur, culpa labore, itaque quasi voluptatibus
-                        mollitia nostrum.
+                        Мне 23 года, проживаю в Тбилиси, увлекаюсь
+                        программированием с 2021 года.
                     </p>
-                    <div>
-                        <button
-                            className="px-6 py-3 rounded-full w-full sm:w-fit mr-3
+                    <div className="space-x-0 lg:space-x-3">
+                        <Link href={"https://t.me/bvllone"} target="_blank">
+                            <button
+                                className="px-6 py-3 rounded-full w-full sm:w-fit mr-0 md:mr-3 lg:mr-0
                              bg-gradient-to-br from-blue-600 via-green-400 to-teal-950 text-cyan-50 border border-transparent opacity-90 hover:opacity-100"
+                            >
+                                Мой Telegram
+                            </button>
+                        </Link>
+                        <Link
+                            href={"https://github.com/MyshinskyIlya"}
+                            target="_blank"
                         >
-                            Hire Me
-                        </button>
-                        <button className="px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-br from-teal-900 via-violet-600 to-green-950 hover:bg-zinc-900 border border-transparent mt-4">
-                            <span className="block bg-[#121212] hover:bg-slate-950 rounded-full px-5 py-2">
-                                Download CV
-                            </span>
-                        </button>
+                            <button className="px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-br from-teal-900 via-violet-600 to-green-950 hover:bg-zinc-900 border border-transparent mt-4">
+                                <span className="block bg-[#121212] hover:bg-slate-950 rounded-full px-5 py-2">
+                                    GitHub
+                                </span>
+                            </button>
+                        </Link>
+                        <Link
+                            href={"https://t.me/myprogramminghours"}
+                            target="_blank"
+                        >
+                            <button className="px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-br from-green-800 via-teal-600 to-yellow-500 hover:bg-zinc-900 border border-transparent mt-4">
+                                <span className="block bg-[#121212] hover:bg-slate-950 rounded-full px-5 py-2">
+                                    Часы программирования
+                                </span>
+                            </button>
+                        </Link>
                     </div>
                 </motion.div>
                 <motion.div
@@ -61,13 +78,13 @@ const HeroSection = () => {
                     transition={{ duration: 0.8, delay: 0.5 }}
                     className="col-span-5 place-self-center mt-5 lg:mt-0 sm:ml-10"
                 >
-                    <div className="rounded-full bg-[#181818] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] relative hidden md:block">
+                    <div>
                         <Image
-                            className="transform absolute -translate-x-1/2 -translate-y-1/2 top-[160px] -right-[115px] lg:top-[240px] lg:right-[-42px]"
-                            src={heroImg}
+                            className="hidden md:block top-[260px] -right-[90px] lg:top-[280px] lg:right-[-2px] rounded-full border border-yellow-400 shadow-md shadow-yellow-500"
+                            src={"/images/me.jpg"}
                             width={320}
-                            height={320}
-                            priority={true}
+                            height={280}
+                            priority
                             alt="hero image"
                         ></Image>
                     </div>
