@@ -38,7 +38,7 @@ const HeroSection = () => {
                         />
                     </h1>
                     <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-                        Мне 23 года, проживаю в Тбилиси, увлекаюсь
+                        Мне 23 года, проживаю в Тбилиси, занимаюсь
                         программированием с 2021 года.
                     </p>
                     <div className="space-x-0 lg:space-x-3">
