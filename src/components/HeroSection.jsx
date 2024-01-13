@@ -45,7 +45,7 @@ const HeroSection = () => {
                         <Link href={"https://t.me/bvllone"} target="_blank">
                             <button
                                 className="px-6 py-3 rounded-full w-full sm:w-fit mr-0 md:mr-3 lg:mr-0
-                             bg-gradient-to-br from-blue-600 via-green-400 to-teal-950 text-cyan-50 border border-transparent opacity-90 hover:opacity-100"
+                             bg-gradient-to-br from-blue-700 via-green-600 to-teal-950 text-cyan-50 border border-transparent opacity-90 hover:opacity-100"
                             >
                                 Мой Telegram
                             </button>
@@ -54,7 +54,7 @@ const HeroSection = () => {
                             href={"https://github.com/MyshinskyIlya"}
                             target="_blank"
                         >
-                            <button className="px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-br from-teal-900 via-violet-600 to-green-950 hover:bg-zinc-900 border border-transparent mt-4">
+                            <button className="px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-br from-teal-900 via-violet-600 to-green-950 hover:bg-zinc-900 border border-transparent mt-4 opacity-90 hover:opacity-100">
                                 <span className="block bg-[#121212] hover:bg-slate-950 rounded-full px-5 py-2">
                                     GitHub
                                 </span>
@@ -64,7 +64,7 @@ const HeroSection = () => {
                             href={"https://t.me/myprogramminghours"}
                             target="_blank"
                         >
-                            <button className="px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-br from-green-800 via-teal-600 to-yellow-500 hover:bg-zinc-900 border border-transparent mt-4">
+                            <button className="px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-br from-green-800 via-teal-600 to-yellow-500 hover:bg-zinc-900 border border-transparent mt-4 opacity-90 hover:opacity-100">
                                 <span className="block bg-[#121212] hover:bg-slate-950 rounded-full px-5 py-2">
                                     Часы программирования
                                 </span>
