@@ -17,7 +17,7 @@ const HeroSection = () => {
                     transition={{ duration: 0.5 }}
                     className="col-span-7 place-self-center text-center sm:text-left sm:mr-10"
                 >
-                    <h1 className="mb-4 lg:text-6xl text-[28px] leading-10 md:text-4xl font-extrabold">
+                    <h1 className="mb-4 lg:text-6xl text-[32px] leading-10 md:text-4xl font-extrabold">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-teal-600">
                             ПРИВЕТ, Я{" "}
                         </span>
@@ -37,7 +37,7 @@ const HeroSection = () => {
                             repeat={Infinity}
                         />
                     </h1>
-                    <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+                    <p className="text-[#ADB7BE] text-[14px] sm:text-lg mb-6 lg:text-xl">
                         Мне 23 года, проживаю в Тбилиси, занимаюсь
                         программированием с 2021 года.
                     </p>
@@ -45,7 +45,7 @@ const HeroSection = () => {
                         <Link href={"https://t.me/bvllone"} target="_blank">
                             <button
                                 className="px-6 py-3 rounded-full w-full sm:w-fit mr-0 md:mr-3 lg:mr-0
-                             bg-gradient-to-br from-blue-700 via-green-600 to-teal-950 text-cyan-50 border border-transparent opacity-90 hover:opacity-100"
+                             bg-gradient-to-br from-blue-700 via-green-600 to-teal-950 text-cyan-50 border border-transparent hover:from-blue-900 hover:via-green-700 hover:text-white"
                             >
                                 Мой Telegram
                             </button>

@@ -6,7 +6,7 @@ const Footer = () => {
             className="footer text-white border border-t-[#33353F]
          border-l-transparent border-r-transparent border-b-transparent"
         >
-            <div className="container p-12 flex justify-between items-center">
+            <div className="container p-6 md:p-12 flex justify-between items-center">
                 <span className="md:text-lg text-sm font-semibold">
                     Myshinsky I 2023
                 </span>
