@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: "/aasdfafasgsag",
-    assetPrefix: "/daklfasklmfaklsfklas",
+    basePath: "",
+    assetPrefix: "daklfasklmfaklsfklas",
     // Другие настройки...
 };
 
