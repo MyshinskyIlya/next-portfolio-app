@@ -1,4 +1,6 @@
-export const projectsArray = [
+import { Project } from "../@types/project";
+
+export const projectsArray: Project[] = [
     {
         id: 1,
         title: "Threads",
@@ -26,7 +28,7 @@ export const projectsArray = [
             "React + Typescript + Styled Components + API (axios) + React Icons",
         image: "/images/projects/countries.jpg",
         tag: ["All", "Web", "Mobile"],
-        gitUrl: "https://github.com/MyshinskyIlya/typescript-mern-next-threads-fullstack",
+        gitUrl: "https://github.com/MyshinskyIlya/typescript-countries-info-frontend",
         previewUrl: "/",
     },
     {
@@ -56,7 +58,7 @@ export const projectsArray = [
             "React + TypeScript + Redux@toolkit + SCSS + CSS-Modules + React Content Loader + Lodash.Debounce + React-router v6 + axios + useDebounce",
         image: "/images/projects/pizza.jpg",
         tag: ["All", "Web"],
-        gitUrl: "/",
+        gitUrl: "https://github.com/MyshinskyIlya/typescript-pizza-store-frontend",
         previewUrl: "/",
     },
 ];

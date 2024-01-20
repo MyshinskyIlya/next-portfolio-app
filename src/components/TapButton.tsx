@@ -1,12 +1,18 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
+
+interface TapButtonProps {
+    active: boolean;
+    selectTab: () => void;
+    children: ReactNode;
+}
 
 const variants = {
     default: { width: 0 },
     active: { width: "calc(100% - 0.75rem)" },
 };
 
-const TapButton = ({ active, selectTab, children }) => {
+const TapButton = ({ active, selectTab, children }: TapButtonProps) => {
     const buttonClasses = active ? "text-white" : "";
 
     return (

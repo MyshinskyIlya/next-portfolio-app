@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useRef, useState, useTransition } from "react";
 import descriptionImage from "../../public/images/description.jpg";
 import TapButton from "./TapButton";
-import { motion, useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 
 const TAB_DATA = [
     {
@@ -69,13 +69,13 @@ const TAB_DATA = [
     },
 ];
 
-const AboutSection = () => {
+const AboutSection = React.memo(() => {
     const [tab, setTab] = useState("skills");
     const [isPending, startTransition] = useTransition();
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
 
-    const handleTapChange = (id) => {
+    const handleTapChange = (id: string) => {
         startTransition(() => {
             setTab(id);
         });
@@ -133,13 +133,29 @@ const AboutSection = () => {
                             Опыт работы
                         </TapButton>
                     </div>
-                    <div className="mt-8 md:min-h-[226px] min-h-[286px]">
-                        {TAB_DATA.find((t) => t.id === tab).content}
-                    </div>
+                    <AnimatePresence initial={false}>
+                        <motion.div
+                            key={tab}
+                            className="mt-8 md:min-h-[226px] min-h-[286px]"
+                        >
+                            {TAB_DATA.find((t) => t.id === tab) && (
+                                <motion.div
+                                    initial={{ opacity: 0, x: -100 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.6 }}
+                                >
+                                    {
+                                        TAB_DATA.find((t) => t.id === tab)
+                                            ?.content
+                                    }
+                                </motion.div>
+                            )}
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
             </motion.div>
         </section>
     );
-};
+});
 
 export default AboutSection;

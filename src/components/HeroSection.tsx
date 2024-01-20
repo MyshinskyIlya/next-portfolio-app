@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import heroImg from "../../public/images/avatar.png";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import Link from "next/link";

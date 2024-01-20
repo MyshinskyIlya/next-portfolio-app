@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { FormEvent, SyntheticEvent, useState } from "react";
 import githubIcon from "../../public/images/icons/github.svg";
 import tgIcon from "../../public/images/icons/telegram.svg";
 import Link from "next/link";
@@ -11,13 +11,20 @@ const EmailSection = () => {
     const [errorSumbit, setErrorSubmit] = useState(false);
     const [sending, setSending] = useState(false);
 
-    const handleSumbit = async (e) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setSending(true);
+
+        const target = e.target as typeof e.target & {
+            email: { value: string };
+            subject: { value: string };
+            message: { value: string };
+        };
+
         const data = {
-            email: e.target.email.value,
-            subject: e.target.subject.value,
-            message: e.target.message.value,
+            email: target.email.value,
+            subject: target.subject.value,
+            message: target.message.value,
         };
 
         const JSONdata = JSON.stringify(data);
@@ -26,23 +33,26 @@ const EmailSection = () => {
         const options = {
             method: "POST",
             headers: {
-                "Content-Type": "aplication/json",
+                "Content-Type": "application/json",
             },
             body: JSONdata,
         };
 
-        const response = await fetch(endpoint, options).then((res) => {
-            if (res.status === 200) {
+        try {
+            const response = await fetch(endpoint, options);
+
+            if (response.status === 200) {
                 console.log("Message sent.");
                 setEmailSubmited(true);
-            }
-
-            if (res.status !== 200) {
+            } else {
                 setErrorSubmit(true);
             }
-
+        } catch (error) {
+            console.error("Error occurred:", error);
+            setErrorSubmit(true);
+        } finally {
             setSending(false);
-        });
+        }
     };
     return (
         <section id="contact" className="relative pt-6">
@@ -81,13 +91,12 @@ const EmailSection = () => {
                 </div>
                 <div className="text-white">
                     <form
-                        onSubmit={handleSumbit}
+                        onSubmit={handleSubmit}
                         className="flex flex-col gap-4"
                     >
                         <div>
                             <label
                                 htmlFor="email"
-                                type="email"
                                 className="block text-sm font-medium"
                             >
                                 Ваша почта
@@ -104,7 +113,6 @@ const EmailSection = () => {
                         <div>
                             <label
                                 htmlFor="subject"
-                                type="email"
                                 className="mt-2 block text-sm font-medium"
                             >
                                 Тема

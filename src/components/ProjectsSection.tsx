@@ -17,12 +17,12 @@ const tags = [
     },
 ];
 
-const ProjectsSection = () => {
+const ProjectsSection = React.memo(() => {
     const [tag, setTag] = useState("All");
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
 
-    const handleTag = (newTag) => {
+    const handleTag = (newTag: string) => {
         setTag(newTag);
     };
 
@@ -72,6 +72,6 @@ const ProjectsSection = () => {
             </ul>
         </section>
     );
-};
+});
 
 export default ProjectsSection;

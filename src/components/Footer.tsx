@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = React.memo(() => {
     return (
         <footer
             className="footer text-white border border-t-[#33353F]
@@ -16,6 +16,6 @@ const Footer = () => {
             </div>
         </footer>
     );
-};
+});
 
 export default Footer;

@@ -1,9 +1,23 @@
 import React from "react";
-import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/solid";
+import { CodeBracketIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import Image from "next/image";
 
-const ProjectCart = ({ imageUrl, title, description, gitUrl, previewUrl }) => {
+interface ProjectCartProps {
+    imageUrl: string;
+    title: string;
+    description: string;
+    gitUrl: string;
+    previewUrl: string;
+}
+
+const ProjectCart = ({
+    imageUrl,
+    title,
+    description,
+    gitUrl,
+    previewUrl,
+}: ProjectCartProps) => {
     return (
         <div className="flex flex-col">
             <div className="h-44 md:h-52 rounded-t-xl relative group ">
