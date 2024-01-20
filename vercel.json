@@ -1,4 +1,8 @@
 {
+    "buildCommand": "next build",
+    "cleanUrls": true,
+    "devCommand": "next dev",
+    "framework": "nextjs",
     "name": "adsasdasd",
     "description": "Hey hey hey"
 }
