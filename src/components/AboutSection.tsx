@@ -12,17 +12,20 @@ const TAB_DATA = [
         id: "skills",
         content: (
             <>
-                <h3 className="mb-4 text-xl  font-semibold">Tech Stack</h3>
-                <ul className="font-light md:text-lg space-y-0.5 list-disc pl-5 grid md:grid-cols-3">
+                <h3 className="mb-4 text-xl font-semibold">Tech Stack</h3>
+                <ul className="font-light text-base md:text-lg space-y-0.5 list-disc pl-5 grid grid-cols-2 max-sm:gap-x-20 md:grid-cols-3">
                     <li>React</li>
-                    <li>TypeScript</li>
-                    <li>Node</li>
-                    <li>NextJS</li>
-                    <li>Redux Toolkit</li>
-                    <li>MongoDB</li>
                     <li>Vue</li>
-                    <li>PostgreSQL</li>
+                    <li>Next.js</li>
+                    <li>Node</li>
+                    <li>TypeScript</li>
                     <li>Tailwind</li>
+                    <li>Redux Toolkit</li>
+                    <li>MobX</li>
+                    <li>MongoDB</li>
+                    <li>PostgreSQL</li>
+                    <li>Webpack</li>
+                    <li>Linux/MacOS</li>
                 </ul>
             </>
         ),
@@ -36,7 +39,7 @@ const TAB_DATA = [
                     Национальный исследовательский университет «Высшая школа
                     экономики» г. Москва.
                 </h3>
-                <p className="font-light md:text-lg space-y-0.5 list-disc">
+                <p className="font-light text-base md:text-lg space-y-0.5 list-disc">
                     Дизайн и разработка информационных продуктов.
                 </p>
             </>
@@ -50,7 +53,7 @@ const TAB_DATA = [
                 <h3 className="mb-4 text-xl font-semibold">
                     Коммерческий опыт
                 </h3>
-                <ul className="font-light md:text-lg space-y-0.5 list-disc pl-5">
+                <ul className="font-light text-base md:text-lg space-y-0.5 list-disc pl-5">
                     <li>
                         Архитектурное бюро Jadoo. Разработка веб-приложения
                         2023г.
@@ -60,7 +63,7 @@ const TAB_DATA = [
                 <h3 className="mb-4 text-xl font-semibold">
                     Некоммерческий опыт
                 </h3>
-                <ul className="font-light md:text-lg space-y-0.5 list-disc pl-5">
+                <ul className="font-light text-base md:text-lg space-y-0.5 list-disc pl-5">
                     <li>Более 1200 часов программирования.</li>
                     <li>Более 10 полномасштабных приложений.</li>
                 </ul>
