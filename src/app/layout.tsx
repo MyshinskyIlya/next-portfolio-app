@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 
 const inter: any = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <html lang="en">
+            <Head>
+                <meta name="description" content={metadata.description} />
+            </Head>
             <body className={inter.className}>{children}</body>
         </html>
     );
