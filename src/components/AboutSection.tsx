@@ -93,7 +93,7 @@ const AboutSection = React.memo(() => {
                 initial="initial"
                 animate={isInView ? "animate" : "initial"}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="md:grid md:grid-cols-2 gap-8 items-start py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
+                className="md:grid md:grid-cols-2 gap-8 items-start max-sm:text-sm py-8 xl:gap-16 sm:py-16 xl:px-16"
             >
                 <Image
                     src={descriptionImage}
@@ -113,7 +113,7 @@ const AboutSection = React.memo(() => {
                         стартапы. Приверженость обучению и лучшим практикам
                         разработки.
                     </p>
-                    <div className="flex flex-row mt-8 gap-3 text-[#ADB7BE] text-[14px] md:text-lg whitespace-nowrap">
+                    <div className="flex flex-row mt-8 gap-3 text-[#ADB7BE] text-[16px] md:text-lg whitespace-nowrap">
                         <TapButton
                             selectTab={() => handleTapChange("skills")}
                             active={tab === "skills"}
