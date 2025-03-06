@@ -11,9 +11,13 @@ const EmailSection = () => {
     const [errorSumbit, setErrorSubmit] = useState(false);
     const [sending, setSending] = useState(false);
 
+    const [areaText, setAreaText] = useState<string>("");
+    const [buttonText, setButtonText] = useState<string>("Отправить");
+
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setSending(true);
+        setButtonText("Отправка...");
 
         const target = e.target as typeof e.target & {
             email: { value: string };
@@ -43,6 +47,8 @@ const EmailSection = () => {
 
             if (response.status === 200) {
                 console.log("Message sent.");
+                setAreaText("");
+                setButtonText("Письмо отправлено!");
                 setEmailSubmited(true);
             } else {
                 setErrorSubmit(true);
@@ -50,8 +56,13 @@ const EmailSection = () => {
         } catch (error) {
             console.error("Error occurred:", error);
             setErrorSubmit(true);
+            setButtonText("");
         } finally {
             setSending(false);
+            setTimeout(() => {
+                setButtonText("Отправить");
+                setEmailSubmited(false);
+            }, 2000);
         }
     };
     return (
@@ -107,6 +118,7 @@ const EmailSection = () => {
                                 id="email"
                                 required
                                 placeholder="example@gmail.com"
+                                autoComplete="off"
                                 className="mt-4 bg-[#191919] border border-[#33353F] placeholder=[#9CA2A9] text-gray-200 text-sm rounded=lg block w-full p-2"
                             />
                         </div>
@@ -123,6 +135,7 @@ const EmailSection = () => {
                                 id="subject"
                                 required
                                 placeholder="Привет, Илья..."
+                                autoComplete="off"
                                 className="mt-4 bg-[#191919] border border-[#33353F] placeholder=[#9CA2A9] text-gray-200 text-sm rounded=lg block w-full p-2"
                             />
                         </div>
@@ -134,6 +147,9 @@ const EmailSection = () => {
                                 Сообщение
                             </label>
                             <textarea
+                                value={areaText}
+                                onChange={(e) => setAreaText(e.target.value)}
+                                required
                                 name="message"
                                 id="message"
                                 className="mt-4 bg-[#191919] border border-[#33353F] placeholder=[#9CA2A9] text-gray-200 text-sm rounded=lg block w-full p-2"
@@ -142,21 +158,24 @@ const EmailSection = () => {
                         </div>
                         <button
                             type="submit"
-                            className="mt-2 bg-gradient-to-r hover:from-violet-800 hover:to-teal-900 from-violet-900 to-teal-950  text-white font-medium p-2 rounded-lg"
+                            className={`mt-2 bg-gradient-to-r from-violet-900 to-teal-950 font-medium p-2 rounded-lg ${
+                                sending || !areaText.length
+                                    ? "cursor-default"
+                                    : "hover:from-violet-800 hover:to-teal-900 cursor-pointer"
+                            }`}
+                            disabled={sending}
                         >
-                            {sending ? (
-                                <p>Отправка...</p>
-                            ) : emailSubmited ? (
-                                <p className="text-green-600">
-                                    Письмо отправлено!
-                                </p>
-                            ) : !errorSumbit ? (
-                                <p>Отправить</p>
-                            ) : (
-                                <p className="text-red-600">
-                                    Что-то пошло не так
-                                </p>
-                            )}
+                            <span
+                                className={
+                                    emailSubmited
+                                        ? "text-green-600"
+                                        : areaText.length
+                                        ? "text-white"
+                                        : "text-gray-400"
+                                }
+                            >
+                                {buttonText}
+                            </span>
                         </button>
                     </form>
                 </div>

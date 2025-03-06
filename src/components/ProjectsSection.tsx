@@ -37,7 +37,7 @@ const ProjectsSection = React.memo(() => {
 
     return (
         <section id="projects" className="pt-20">
-            <h2 className="text-4xl font-bold text-center">ПРОЕКТЫ</h2>
+            <h2 className="text-4xl font-bold text-center">ПЕТ ПРОЕКТЫ</h2>
             <div
                 className="text-white flex flex-row justify-center
                  items-center py-6 mt-6 gap-4 md:gap-6 "

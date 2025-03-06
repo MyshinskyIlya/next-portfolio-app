@@ -15,16 +15,19 @@ const TAB_DATA = [
                 <h3 className="mb-4 text-xl font-semibold">Tech Stack</h3>
                 <ul className="font-light text-base md:text-lg space-y-0.5 list-disc pl-5 grid grid-cols-2 max-sm:gap-x-20 md:grid-cols-3">
                     <li>React</li>
-                    <li>Vue</li>
-                    <li>Next.js</li>
-                    <li>Node</li>
                     <li>TypeScript</li>
+                    <li>Node</li>
+                    <li>Next.js</li>
+                    <li>Vue</li>
                     <li>Tailwind</li>
+                    <li>Zustand</li>
                     <li>Redux Toolkit</li>
                     <li>MobX</li>
                     <li>MongoDB</li>
                     <li>PostgreSQL</li>
                     <li>Webpack</li>
+                    <li>AWS</li>
+                    <li>Eleventy JS</li>
                     <li>Linux/MacOS</li>
                 </ul>
             </>
@@ -55,8 +58,34 @@ const TAB_DATA = [
                 </h3>
                 <ul className="font-light text-base md:text-lg space-y-0.5 list-disc pl-5">
                     <li>
-                        Архитектурное бюро Jadoo. Разработка веб-приложения
-                        2023г.
+                        <p>
+                            Фриланс - создание и сопровождение веб-приложений,
+                            включая редизайн и обновление технологического
+                            стека.
+                        </p>
+                        <p className="flex justify-end w-full text-yellow-300">
+                            2023г.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Jadoo - архитектурное бюро. Frontend-разработчик.
+                            Сольная разработка веб-приложения, поддержка и
+                            обновление.
+                        </p>
+                        <p className="flex justify-end w-full text-yellow-300">
+                            2023-2024г.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            AI Boost - Fullstack-разработчик. Сервис для
+                            создания и редактирования изображений с помощью
+                            нейронных сетей.
+                        </p>
+                        <p className="flex justify-end w-full text-yellow-300">
+                            2024-2025г.
+                        </p>
                     </li>
                 </ul>
                 <br />
@@ -64,7 +93,7 @@ const TAB_DATA = [
                     Некоммерческий опыт
                 </h3>
                 <ul className="font-light text-base md:text-lg space-y-0.5 list-disc pl-5">
-                    <li>Более 1200 часов программирования.</li>
+                    <li>Более 3000 часов программирования.</li>
                     <li>Более 10 полномасштабных приложений.</li>
                 </ul>
             </>
@@ -108,7 +137,7 @@ const AboutSection = React.memo(() => {
                 <div className="mt-8 md:mt-0 text-left flex flex-col h-full">
                     <h2 className="text-4xl font-bold">ОБО МНЕ</h2>
                     <p className="mt-4 text-base lg:text-lg font-light">
-                        Веб-разработчик почти с 2-летнем стажем, специализируюсь
+                        Веб-разработчик почти с 4-летнем стажем, специализируюсь
                         на создании интуитивно-понятных отзывчивых
                         пользовательских интерфейсов и полноценных
                         веб-приложений. <br /> <br /> Работаю над разнообразными
